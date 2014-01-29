@@ -4,35 +4,35 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 
-public class CustomIntent<T extends CustomIntent<T>> implements IntentInterface<CustomIntent<T>> {
-    private final CustomIntent self = this;
+public class ChaineIntent<T extends ChaineIntent<T>> implements ChaineIntentInterface<ChaineIntent<T>> {
+    private final ChaineIntent self = this;
 
     private Context mContext;
     private FragmentActivity mActivity;
     private Class<?> mClassName;
 
-    public CustomIntent(Context context) {
+    public ChaineIntent(Context context) {
         mContext = context;
     }
 
-    public CustomIntent(FragmentActivity activity) {
+    public ChaineIntent(FragmentActivity activity) {
         mActivity = activity;
     }
 
     @Override
-    public CustomIntent<T> move(Class<?> className) {
+    public ChaineIntent<T> move(Class<?> className) {
         mClassName = className;
         return self;
     }
 
     @Override
-    public CustomIntent<T> finish() {
+    public ChaineIntent<T> finish() {
         mActivity.finish();
         return self;
     }
 
     @Override
-    public CustomIntent<T> moveActivity() {
+    public ChaineIntent<T> moveActivity() {
         if (mClassName != null) {
             Intent intent = new Intent(mActivity, mClassName);
             mActivity.startActivity(intent);

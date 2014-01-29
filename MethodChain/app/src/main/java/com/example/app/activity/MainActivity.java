@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.app.R;
 import com.example.app.fragment.BaseFragment;
-import com.example.app.test.CustomIntent;
+import com.example.app.test.ChaineIntent;
 
 public class MainActivity extends BaseActivity {
     private final MainActivity self = this;
@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
      */
     public static class PlaceholderFragment extends BaseFragment {
 
-        public CustomIntent ci;
+        public ChaineIntent ci;
 
         public PlaceholderFragment() {
         }
@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fr_main, container, false);
-            ci = new CustomIntent(getActivity());
+            ci = new ChaineIntent(getActivity());
             return rootView;
         }
 
