@@ -1,0 +1,54 @@
+比率	画面サイズ	備考
+mdpi（160dpi）	  baseline	360×640px	  320×480px、   320×432pxなど
+hdpi（240dpi）	  1.5x	        540×960px	  480×800px、   480×854pxなど
+xhdpi（320dpi）    2x	        720×1280px	  640×960pxなど
+xxhdpi（480dpi）   3x	        1080×1920px
+
+
+	                  mdpi             hdpi                xhdpi              xxhdpi
+ランチャーアイコン   48×48px	    72×72px	        96×96px            144×144px
+メニューアイコン   32×32px(48×48px)    48×48px(72×72px)	-	-
+actionbarアイコン    24×24px	    36×36px	        48×48px	           72×72px
+statusbarアイコン    24×24px	    36×36px	        48×48px	           72×72px
+タブアイコン	   28×28px(32×32px)    42×42px(48×48px)    56×56px(64×64px)	 86×86px(96×96p)
+dialogアイコン          32×32px	    48×48px	        64×64px	           96×96px
+listviewのアイコン      32×32px	    48×48px	        64×64px	           96×96px
+
+mdpi向け素材: 320×480(px)
+hdpi向け素材: 480×720(px)
+xhdpi向け素材: 640×960(px)
+
+まずxhdpi用の素材を作成し、最後にそれを75%サイズに縮小したhdpi用素材もまとめて作成
+xhdpi 1x
+hdpi  0.75x
+mdpi  0.5x
+
+
+・sw<N>dp (smallest width N dp)
+アプリ描画領域で最も短い辺の長さが<N>dpより大きい場合に参照されるリソースです。
+画面の向きには依存しない為、画面回転により基準となる値は変化しません。
+これは、画面の向きに関わらずアプリのUIデザイン上、必ず必要な横幅と考えることもで
+きます。
+
+例えば、values-sw500dpのリソースフォルダを用意することで、アプリ描画領域の最短辺
+の長さが500dp以上である場合に参照されるリソースを定義できます。
+
+注意しなければならないのは、<N>値は解像度ベースの縦横サイズではなく、
+アプリ描画領域ベースの縦横サイズを指定する必要があります。
+解像度が100×100でもアプリ描画領域が50×50しかない場合はvalues-sw100dpの
+リソースフォルダを用意しても参照されません。
+参照されるにはvalues-sw50dpのリソースフォルダを用意する必要があります。
+
+
+●参考となる画面サイズ
+端末ごとの一般的なサイズは下記となります。
+•320dp(mhdpi): スマートフォン (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc)
+•480dp(mhdpi): 5型 Streak Tablet (480x800 mdpi).
+•600dp(mhdpi): 7型 Tablet (600x1024 mdpi).
+•720dp(mhdpi): 10型 Tablet (720x1280 mdpi, 800x1280 mdpi, etc).
+
+
+参考URL
+http://spdesign.exblog.jp/19798730/
+http://sousaku-memo.net/php-system/689
+http://yuki312.blogspot.jp/2012/02/blog-post.html
