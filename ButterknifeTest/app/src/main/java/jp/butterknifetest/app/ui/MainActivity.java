@@ -1,4 +1,4 @@
-package jp.butterknifetest.app;
+package jp.butterknifetest.app.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +15,7 @@ import com.romainpiel.michelangelo.InjectViews;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import jp.butterknifetest.app.R;
 
 
 public class MainActivity extends ActionBarActivity {
