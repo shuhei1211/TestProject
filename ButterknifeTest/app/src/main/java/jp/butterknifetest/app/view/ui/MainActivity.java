@@ -1,4 +1,4 @@
-package jp.butterknifetest.app.ui;
+package jp.butterknifetest.app.view.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,8 +14,8 @@ import com.romainpiel.michelangelo.InjectViews;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
 import jp.butterknifetest.app.R;
+import jp.butterknifetest.app.controller.SampleOnClickListener;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -45,10 +45,10 @@ public class MainActivity extends ActionBarActivity {
         @InjectView(R.id.button)
         Button mButton;
 
-        @OnClick(R.id.button)
-        public void onClick() {
-            mTextView.setText("butter knife test");
-        }
+//        @OnClick(R.id.button)
+//        public void onClick() {
+//            mTextView.setText("butter knife test");
+//        }
 
         public PlaceholderFragment() {
         }
@@ -61,6 +61,12 @@ public class MainActivity extends ActionBarActivity {
             // initiarize ButterKnife
             ButterKnife.inject(this, rootView);
             return rootView;
+        }
+
+        @Override
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+            mButton.setOnClickListener(new SampleOnClickListener(mTextView));
         }
 
         @Override
