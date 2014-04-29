@@ -1,4 +1,4 @@
-package jp.butterknifetest.app.controller;
+package jp.butterknifetest.app.controller.core;
 
 import android.view.View;
 

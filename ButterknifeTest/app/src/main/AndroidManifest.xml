@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".view.ui.MainActivity"
+            android:name="jp.butterknifetest.app.controller.ui.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="jp.butterknifetest.app.service.SampleService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name="jp.butterknifetest.app.service.MyIntentService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>

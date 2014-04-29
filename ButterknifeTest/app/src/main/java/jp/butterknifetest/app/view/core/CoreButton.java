@@ -1,4 +1,4 @@
-package jp.butterknifetest.app.view.button;
+package jp.butterknifetest.app.view.core;
 
 import android.annotation.TargetApi;
 import android.content.Context;
